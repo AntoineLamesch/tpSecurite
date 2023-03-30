@@ -4,8 +4,6 @@ if (session_status() == PHP_SESSION_NONE) {
 	session_start();
 }
 
-var_dump($_SESSION['otp']);
-
 
 echo "
 
@@ -45,7 +43,7 @@ echo "
 			<div class='wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33'>
 				<form class='login100-form validate-form flex-sb flex-w' method='post' action='./verif_otp.php'>
 					<span class='login100-form-title p-b-53'>
-						Veuillez inidquer le code qui vient d'être envoyé à votre adresse mail
+						Veuillez indiquer le code qui vient d'être envoyé à votre adresse mail
 					</span>
 
 					<div class='p-t-31 p-b-9'>

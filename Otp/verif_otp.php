@@ -19,6 +19,7 @@ $myTOTP = new MyTOTP();
 
 if($myTOTP->verifyOTP($secret, $code)){
     echo "code bon";
+    header('location:./accueil.php');
 }else{
     echo "mauvais code";
 }
