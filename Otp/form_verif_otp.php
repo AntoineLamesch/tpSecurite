@@ -74,8 +74,8 @@ echo "
 									Votre email
 								</span>
 							</div>
-							<div class='wrap-input100 validate-input' data-validate = 'Mail requis'>
-								<input class='input100' type='mail' name='mail' >
+							<div class='wrap-input100'>
+								<input class='input100' type='mail' name='mail' required='false' >
 								<span class='focus-input100'></span>
 							</div>
 

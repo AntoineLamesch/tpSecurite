@@ -32,21 +32,21 @@ class OTP
 
         $myTotp = new MyTOTP();
         $code = $myTotp->generateCode('Antoine');
-        session_start();
+        if (session_status() == PHP_SESSION_NONE) { session_start(); }
         $_SESSION['otp'] = $code;
 
         // Créez un objet de transport SMTP
-        $transport = (new Swift_SmtpTransport('smtp.ionos.fr', 465, 'ssl'))
-            ->setUsername('contact@antoine-lamesch.fr')
-            ->setPassword('Adrien29Baptiste14.@');
+        $transport = (new Swift_SmtpTransport('smtp.exemple.fr', 465, 'ssl'))//Ici (adresse SMTP, le Port utilisé, la sécurité ssl)
+            ->setUsername('exemple@exemple.fr')//votre identifiant SMTP, souvent le mail par lequel vous voulez envoyer le message
+            ->setPassword('mdp');//Votre mot de passe SMTP
 
         // Créez l'objet Mailer avec le transport SMTP
         $mailer = new Swift_Mailer($transport);
 
         // Créez l'objet Message avec les détails du mail
         $message = (new Swift_Message('Sujet du mail'))
-            ->setFrom(['contact@antoine-lamesch.fr' => 'Antoine Lamesch'])
-            ->setTo(['antoine.lamesch@live.fr' => 'Utilisateur'])
+            ->setFrom(['exemple@exemple.fr' => 'Antoine Lamesch'])
+            ->setTo([$email=> 'Utilisateur'])
             ->setBody('Votre code de validation est :'.$code);
 
         // Envoyez le message

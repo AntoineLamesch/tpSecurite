@@ -3,11 +3,10 @@
 $nom_u = $_POST['nom'];
 $prenom_u = $_POST['prenom'];
 $mail_u = $_POST['mail'];
-$age_u =  $_POST['age'];
-$password = $_POST['pass'];
+$date_n_u=  $_POST['date_naissance'];
 
 $dbh = new PDO('mysql:host=mysql-tltteperlecques.alwaysdata.net;dbname=tltteperlecques_securite;charset=utf8', '289448_securite', 'Securite1.');
-$query = "INSERT INTO User (`nom_u`, `prenom_u`, `mail_u`, `age_u`) VALUES ('$nom_u','$prenom_u','$mail_u','$age_u');";
+$query = "INSERT INTO User (`nom_u`, `prenom_u`, `mail_u`, `dat_n_u`) VALUES ('$nom_u','$prenom_u','$mail_u','$date_n_u');";
 $sth = $dbh->query($query);
 
 header('location:./index.php');

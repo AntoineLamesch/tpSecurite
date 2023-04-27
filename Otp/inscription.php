@@ -88,11 +88,11 @@ echo "
 
 					<div class='p-t-31 p-b-9'>
 						<span class='txt1'>
-							Age
+							Date de naissance
 						</span>
 					</div>
-					<div class='wrap-input100 validate-input' data-validate = 'Un âge est requis'>
-						<input class='input100' type='number' name='age' >
+					<div class='wrap-input100 validate-input' data-validate = 'Une dâte de naissance est requise'>
+						<input class='input100' type='date' name='date_naissance' >
 						<span class='focus-input100'></span>
 					</div>
 					

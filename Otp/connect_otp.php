@@ -14,20 +14,20 @@ require_once './vendor/autoload.php';
 
 
 
-
+$_SESSION['mail'] = $_POST['mail'];
 $mail_u = $_POST['mail'];
 
 $User = new User();
 $res = $User->connectUserMail($mail_u);
 
 
-if(intval($res[0]['nb']) === 1){
+if(intval($res[0]['nb']) != 0){
    $valOTP = new OTP();
    $valOTP ->sendOTP($mail_u);
    header('Location:./form_verif_otp.php');
 }else{
 
-    header('Location:./erreur.php');
+    var_dump(intval($res[0]['nb']));
 }
 
 
